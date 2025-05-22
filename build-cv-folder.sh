@@ -13,21 +13,25 @@ if [ ! -d "$DIR" ]; then
   exit 1
 fi
 
-rm ${DIR}/main.pdf
+if [ -f "${DIR}/main.pdf" ]; then
+    rm "${DIR}/main.pdf"
+fi
+
+docker build -t latex-xelatex-slim .
 
 seq $ITERATIONS | xargs -i docker run \
-                -v $(pwd)/${DIR}:/work \
-                --workdir=/work \
-                --rm \
-                --entrypoint=xelatex \
-                texlive/texlive main.tex
+    -v $(pwd)/${DIR}:/work \
+    --workdir=/work \
+    --rm \
+    latex-xelatex-slim main.tex
+
 
 echo "clean up..."
 
 # rm -f ${DIR}/*.log
 
 find . -name \*.aux -type f -print0  | xargs -0 rm -f
-find . -name \*.nav -type f -print0   | xargs -0 rm -f
+find . -name \*.nav -type f -print0  | xargs -0 rm -f
 find . -name \*.out -type f -print0  | xargs -0 rm -f
 find . -name \*.snm -type f -print0  | xargs -0 rm -f
 find . -name \*.toc -type f -print0  | xargs -0 rm -f
