@@ -1,0 +1,54 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% IMPORTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt,onesize,a4paper,titlepage]{article}
+
+%%%%%%%%%%%%%%% Formatting %%%%%%%%%%%%%%% 
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry} % Margins
+\usepackage{sectsty} % Custom Sections
+
+%%%%%%%%%%%%%%% Font %%%%%%%%%%%%%%% 
+\usepackage{Archivo}
+\usepackage[T1]{fontenc}
+
+%%%%%%%%%%%%%%% Graphics %%%%%%%%%%%%%%% 
+\usepackage{fontawesome5} % Icons
+\usepackage{graphicx} % Images
+\usepackage[most]{tcolorbox} % Color Box
+\usepackage{xcolor} % Colors
+\usepackage{tikz} % For Drawing Shapes
+\tcbuselibrary{breakable}
+
+%%%%%%%%%%%%%%% Miscelanous %%%%%%%%%%%%%%% 
+\usepackage{lipsum} % Lorem Ipsum
+\usepackage{hyperref} % For Hyperlinks
+
+%%%%%%%%%%%%%%% Colors %%%%%%%%%%%%%%% 
+\definecolor{title}{HTML}{a18262} % Color of the title
+\definecolor{backdrop}{HTML}{5e7d9d} % Color of the side column
+\definecolor{lightgray}{HTML}{b8b8b8} % Color for the skill bars
+\definecolor{active}{HTML}{FFBF00}
+
+%%%%%%%%%%%%%%% Section Format %%%%%%%%%%%%%%% 
+\sectionfont{                     
+    \large % Font size
+    \fontfamily{phv}\selectfont % Font family
+    \sectionrule{0pt}{0pt}{-8pt}{1pt} % Rule under Section name
+}
+
+\subsectionfont{
+    \large % Font size
+    \fontfamily{phv}\selectfont % Font family
+    \sectionrule{0pt}{0pt}{-8pt}{1pt} % Rule under Subsection name
+}
+
+%%%%%%%%%%%%%%% Margins and Headers %%%%%%%%%%%%%%%
+\geometry{
+  a4paper,
+  left=5mm,
+  right=5mm,
+  bottom=5mm,
+  top=5mm
+}
+
+\pagestyle{empty} % Empty Headers

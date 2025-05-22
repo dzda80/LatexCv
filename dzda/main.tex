@@ -1,0 +1,42 @@
+\input{setup/preamble.tex}
+\input{setup/macros.tex}
+\usepackage{sectsty}
+%\usepackage{showframe}
+%\usepackage{showdim}
+
+\begin{document}
+    %%% Title %%%
+    \tcbset{colframe=title,colback=title,arc=1mm}
+    \begin{tcolorbox}    
+        \include{dati/bio.tex}
+    \end{tcolorbox}
+    
+    %%% Sections %%%
+    \tcbset{colframe=white,colback=white,arc=0mm, height=0.8\textheight}
+    \begin{tcolorbox}
+        \begin{minipage}[t]{4cm} % Side Panel (e.g. Skills, Links, Languages, etc.)
+            \begin{tcolorbox}[height=0.8\textheight, grow to left by=0.6cm,colback=backdrop,colframe=backdrop,arc=1mm]
+                \include{dati/skills.tex}
+            \end{tcolorbox}            
+        \end{minipage}
+        \begin{minipage}[t]{15cm} % Main Panel (e.g. Education, Work Experience)
+            \begin{tcolorbox}[grow to right by=0.75cm,height=0.8\textheight,colframe=white,colback=white]
+
+                % Profile Section
+                \section*{Profile}
+                \include{dati/biotxt.tex}
+
+                % Latest Work Experience
+                \section*{Work Experience}
+                \include{dati/experiences.tex}
+
+                % Education
+                 \section*{Thinking about the future}
+                 \include{dati/future.tex}
+
+                \vspace{5mm}
+            \end{tcolorbox}
+        \end{minipage}
+    \end{tcolorbox}
+    
+\end{document}
